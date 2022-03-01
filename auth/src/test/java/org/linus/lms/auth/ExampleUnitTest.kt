@@ -1,4 +1,4 @@
-package org.linus.auth
+package org.linus.lms.auth
 
 import org.junit.Test
 

@@ -6,8 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeout
-import org.linus.auth.LoginActivity
-
+import org.linus.lms.auth.ui.platform.AuthActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         lifecycleScope.launch {
             withTimeout(SPLASH_SCREEN_DURATION) {
-                Intent(this@MainActivity, LoginActivity::class.java).also {
+                Intent(this@MainActivity, AuthActivity::class.java).also {
                     startActivity(it)
                 }
             }
