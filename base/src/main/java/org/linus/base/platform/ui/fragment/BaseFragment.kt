@@ -20,8 +20,6 @@ abstract class BaseFragment<T: ViewDataBinding> : Fragment() {
     protected var binding: T by viewLifecycle()
     protected lateinit var navController: NavController
     protected abstract val viewModel: BaseViewModel
-    protected val activity get() = requireActivity() as AppCompatActivity
-
 
     protected abstract fun layoutId(): Int
     protected abstract fun initBinding(binding: T, state: Bundle?)
@@ -46,7 +44,7 @@ abstract class BaseFragment<T: ViewDataBinding> : Fragment() {
     }
 
     override fun onDestroyView() {
-        activity.setSupportActionBar(null)
+        (requireActivity() as AppCompatActivity).setSupportActionBar(null)
         super.onDestroyView()
     }
 }
