@@ -56,6 +56,10 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:2.38.1")
     // DataStore, Preferences only (https://developer.android.com/topic/libraries/architecture/datastore#datastore-preferences)
     implementation("androidx.datastore:datastore-preferences:1.0.0")
+    // OkHttp BOM (https://square.github.io/okhttp/#releases)
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.9.3"))
+    implementation("com.squareup.okhttp3:okhttp") // with BOM, we can do not specify version
+    implementation("com.squareup.okhttp3:logging-interceptor")
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
