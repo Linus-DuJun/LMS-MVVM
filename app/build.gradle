@@ -65,6 +65,9 @@ dependencies {
     implementation("com.squareup.moshi:moshi:1.13.0")
     implementation("com.squareup.moshi:moshi-kotlin:1.13.0")
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
+    // NetworkResponseAdapter, handle network error (https://github.com/haroldadmin/NetworkResponseAdapter)
+    implementation("com.github.haroldadmin:NetworkResponseAdapter:5.0.0-beta01")
+    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
     // OkHttp BOM (https://square.github.io/okhttp/#releases)
     implementation(platform("com.squareup.okhttp3:okhttp-bom:4.9.3"))
     implementation("com.squareup.okhttp3:okhttp") // with BOM, we can do not specify version

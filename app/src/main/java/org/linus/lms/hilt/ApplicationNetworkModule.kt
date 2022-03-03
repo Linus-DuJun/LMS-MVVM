@@ -1,6 +1,7 @@
 package org.linus.lms.hilt
 
 import android.content.Context
+import com.haroldadmin.cnradapter.NetworkResponseAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -20,6 +21,7 @@ import org.linus.lms.hilt.qualifiers.TmdbOkHttpClient
 import org.linus.lms.hilt.qualifiers.TmdbRetrofit
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.io.File
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
@@ -103,6 +105,8 @@ class ApplicationNetworkModule {
         return Retrofit.Builder()
             .baseUrl(LMS_BASE_URL)
             .client(okHttpClient)
+            .addCallAdapterFactory(NetworkResponseAdapterFactory())
+            .addConverterFactory(ScalarsConverterFactory.create()) //handle primitive responses
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
     }

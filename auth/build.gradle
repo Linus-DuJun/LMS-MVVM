@@ -58,6 +58,8 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:2.38.1")
     // Network
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    // NetworkResponseAdapter, handle network error (https://github.com/haroldadmin/NetworkResponseAdapter)
+    implementation("com.github.haroldadmin:NetworkResponseAdapter:5.0.0-beta01")
     // Network
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.moshi:moshi:1.13.0")
