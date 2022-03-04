@@ -60,7 +60,7 @@ class DeviceUuidFactory @Inject constructor(
     private fun generateDeviceUuid(context: Context) {
         var deviceUuid = runBlocking {
             context.dataStore.data.map {
-                it[KEY_USER_ID]
+                it[KEY_DEVICE_UUID]
             }.first()
         }
         if (deviceUuid.isNullOrEmpty()) {

@@ -18,10 +18,9 @@ abstract class BaseUseCase<out Type, in Params> where Type: Any? {
         onResult: (Result<Type>) -> Unit = {}
     ) {
         try {
-            val result = run(params)
-            onResult(Result.success(result))
+           onResult(Result.success(run(params)))
         } catch (e: Exception) {
-            onResult(Result.failure(e))
+            error(e)
         }
     }
 

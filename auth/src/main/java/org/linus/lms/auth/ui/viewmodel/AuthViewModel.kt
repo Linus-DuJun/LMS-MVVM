@@ -17,15 +17,16 @@ class AuthViewModel @Inject constructor(
 
     fun onContinueClick() {
         viewModelScope.safeLaunch {
-            val params = GetVerifyCodeUseCase.GetVerifyCodeParam(email = "linus.du@axel.org")
+            val params = GetVerifyCodeUseCase.GetVerifyCodeParam(email = "test888@mailinator.com")
             getVerifyCodeUseCase(params = params) {
-                it.onFailure {
-                   print("failure is got")
+                it.onSuccess { types ->
+                    print("type is ${types[0]}")
                 }
-                it.onSuccess {
-                    onContinueEvent.call()
+                it.onFailure {
+                    print("throwable is $it")
                 }
             }
+
         }
     }
 

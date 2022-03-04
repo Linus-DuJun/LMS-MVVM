@@ -3,6 +3,7 @@ package org.linus.lms.auth.ui.platform
 import android.os.Bundle
 import androidx.fragment.app.activityViewModels
 import dagger.hilt.android.AndroidEntryPoint
+import org.linus.base.domain.exception.AppException
 import org.linus.base.platform.ui.fragment.BaseFragment
 import org.linus.base.platform.ui.toast.Toaster
 import org.linus.base.util.extension.observe
@@ -25,6 +26,13 @@ class AuthEmailFragment: BaseFragment<FragmentEmailBinding>() {
             observe(onContinueEvent) {
                 toaster.showToast("test hilt")
                 navController.navigate(AuthEmailFragmentDirections.toPasswordFragment())
+            }
+            observe(error) {
+                if (it is AppException.EmailNotRegisteredException) {
+                    toaster.showToast("Ready to register")
+                } else {
+                    toaster.showToast("error: ${it.message}")
+                }
             }
         }
     }
