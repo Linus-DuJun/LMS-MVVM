@@ -3,6 +3,7 @@ package org.linus.lms.auth.ui.platform
 import android.os.Bundle
 import androidx.datastore.preferences.core.edit
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
