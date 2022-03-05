@@ -28,6 +28,9 @@ class AuthEmailFragment: BaseFragment<FragmentEmailBinding>() {
                 toaster.showToast("test hilt")
                 navController.navigate(AuthEmailFragmentDirections.toPasswordFragment())
             }
+            observe(onConfirmAccountEvent) {
+                toaster.showToast("$it need confirm to continue")
+            }
             observe(error) {
                 if (it is AppException.EmailNotRegisteredException) {
                     toaster.showToast("Ready to register")

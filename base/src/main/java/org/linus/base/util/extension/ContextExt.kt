@@ -5,6 +5,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import org.linus.base.util.network.NetworkManager
 
 val KEY_USER_ID = stringPreferencesKey("key_user_id")
 val KEY_SESSION_ID = stringPreferencesKey("key_session_id")

@@ -12,4 +12,9 @@ class AuthRepositoryImpl @Inject constructor(
         val res = authService.getAuthType(email)
         return res.getOrThrow()
     }
+
+    override suspend fun signup(email: String, fcmToken: String) =
+        authService.signup(email, fcmToken)
+
+
 }
