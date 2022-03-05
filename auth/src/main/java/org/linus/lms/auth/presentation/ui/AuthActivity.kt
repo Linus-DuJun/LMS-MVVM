@@ -1,7 +1,7 @@
-package org.linus.lms.auth.ui.platform
+package org.linus.lms.auth.presentation.ui
 
 import dagger.hilt.android.AndroidEntryPoint
-import org.linus.base.platform.ui.activity.BaseActivity
+import org.linus.base.presentation.ui.activity.BaseActivity
 import org.linus.lms.auth.R
 
 @AndroidEntryPoint

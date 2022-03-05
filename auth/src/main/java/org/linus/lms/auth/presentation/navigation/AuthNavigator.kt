@@ -1,4 +1,4 @@
-package org.linus.lms.auth.ui.navigation
+package org.linus.lms.auth.presentation.navigation
 
 interface AuthNavigator {
     fun toHomeActivity()

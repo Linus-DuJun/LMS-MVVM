@@ -1,11 +1,11 @@
-package org.linus.lms.auth.ui.viewmodel
+package org.linus.lms.auth.presentation.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import org.linus.base.domain.exception.AppException
-import org.linus.base.platform.ui.SingleLiveEvent
-import org.linus.base.platform.ui.viewmodel.BaseViewModel
+import org.linus.base.presentation.ui.SingleLiveEvent
+import org.linus.base.presentation.ui.viewmodel.BaseViewModel
 import org.linus.lms.auth.domain.usecase.GetVerifyCodeUseCase
 import org.linus.lms.auth.domain.usecase.SignupUseCase
 import javax.inject.Inject

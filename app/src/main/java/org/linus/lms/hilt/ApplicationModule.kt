@@ -4,8 +4,8 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import org.linus.base.platform.ui.toast.SimpleToaster
-import org.linus.base.platform.ui.toast.Toaster
+import org.linus.base.presentation.ui.toast.SimpleToaster
+import org.linus.base.presentation.ui.toast.Toaster
 import javax.inject.Singleton
 
 @Module

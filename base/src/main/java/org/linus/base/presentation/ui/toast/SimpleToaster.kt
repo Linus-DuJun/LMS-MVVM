@@ -1,4 +1,4 @@
-package org.linus.base.platform.ui.toast
+package org.linus.base.presentation.ui.toast
 
 import android.content.Context
 import android.os.Handler

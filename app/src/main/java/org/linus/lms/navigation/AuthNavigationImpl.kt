@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import dagger.hilt.android.qualifiers.ApplicationContext
 import org.linus.lms.HomeActivity
-import org.linus.lms.auth.ui.navigation.AuthNavigator
+import org.linus.lms.auth.presentation.navigation.AuthNavigator
 import javax.inject.Inject
 
 class AuthNavigatorImpl @Inject constructor(

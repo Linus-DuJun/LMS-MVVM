@@ -1,6 +1,7 @@
 package org.linus.lms.auth.domain.usecase
 
 import dagger.hilt.android.scopes.ViewModelScoped
+import kotlinx.coroutines.coroutineScope
 import org.linus.base.domain.usecase.BaseUseCase
 import org.linus.lms.auth.domain.repository.AuthRepository
 import javax.inject.Inject
@@ -11,7 +12,9 @@ class GetVerifyCodeUseCase @Inject constructor(
 ): BaseUseCase<List<String>, GetVerifyCodeUseCase.GetVerifyCodeParam>() {
 
     override suspend fun run(params: GetVerifyCodeParam): List<String> {
-        return authRepository.getAuthType(params.email)
+        return coroutineScope {
+            authRepository.getAuthType(params.email)
+        }
     }
 
     data class GetVerifyCodeParam(val email: String)

@@ -1,7 +1,6 @@
-package org.linus.base.platform.ui.activity
+package org.linus.base.presentation.ui.activity
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 
 abstract class BaseActivity: AppCompatActivity() {

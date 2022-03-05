@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeout
-import org.linus.lms.auth.ui.platform.AuthActivity
+import org.linus.lms.auth.presentation.ui.AuthActivity
 
 class MainActivity : AppCompatActivity() {
 

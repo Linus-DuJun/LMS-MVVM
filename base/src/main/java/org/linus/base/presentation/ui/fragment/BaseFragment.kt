@@ -1,4 +1,4 @@
-package org.linus.base.platform.ui.fragment
+package org.linus.base.presentation.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,9 +12,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import org.linus.base.platform.ui.viewmodel.BaseViewModel
+import org.linus.base.presentation.ui.viewmodel.BaseViewModel
 import org.linus.base.util.extension.viewLifecycle
-import java.util.*
 
 abstract class BaseFragment<T: ViewDataBinding> : Fragment() {
     protected var binding: T by viewLifecycle()

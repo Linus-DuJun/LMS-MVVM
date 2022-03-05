@@ -1,4 +1,4 @@
-package org.linus.base.platform.ui.viewmodel
+package org.linus.base.presentation.ui.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

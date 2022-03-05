@@ -1,4 +1,4 @@
-package org.linus.base.platform.ui.activity
+package org.linus.base.presentation.ui.activity
 
 import android.view.View
 import androidx.databinding.DataBindingUtil

@@ -1,15 +1,15 @@
-package org.linus.lms.auth.ui.platform
+package org.linus.lms.auth.presentation.ui
 
 import android.os.Bundle
 import androidx.fragment.app.activityViewModels
 import dagger.hilt.android.AndroidEntryPoint
 import org.linus.base.domain.exception.AppException
-import org.linus.base.platform.ui.fragment.BaseFragment
-import org.linus.base.platform.ui.toast.Toaster
+import org.linus.base.presentation.ui.fragment.BaseFragment
+import org.linus.base.presentation.ui.toast.Toaster
 import org.linus.base.util.extension.observe
 import org.linus.lms.auth.R
 import org.linus.lms.auth.databinding.FragmentEmailBinding
-import org.linus.lms.auth.ui.viewmodel.AuthViewModel
+import org.linus.lms.auth.presentation.viewmodel.AuthViewModel
 import javax.inject.Inject
 
 @AndroidEntryPoint

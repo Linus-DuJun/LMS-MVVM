@@ -1,7 +1,7 @@
-package org.linus.base.platform.manager.managerImpl
+package org.linus.base.presentation.manager.managerImpl
 
-import org.linus.base.platform.manager.ErrorHandlerManager
-import org.linus.base.platform.ui.toast.Toaster
+import org.linus.base.presentation.manager.ErrorHandlerManager
+import org.linus.base.presentation.ui.toast.Toaster
 
 class ErrorHandlerManagerImpl(
     private val toaster: Toaster

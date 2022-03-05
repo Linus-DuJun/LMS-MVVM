@@ -1,4 +1,4 @@
-package org.linus.base.platform.ui
+package org.linus.base.presentation.ui
 
 import android.util.Log
 import androidx.annotation.MainThread

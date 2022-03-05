@@ -1,4 +1,4 @@
-package org.linus.base.platform.manager
+package org.linus.base.presentation.manager
 
 /**
  * Handle an error that arises in application and if needed show notification to user that something wrong

@@ -5,12 +5,12 @@
     <data>
         <variable
             name="viewmodel"
-            type="org.linus.lms.auth.ui.viewmodel.AuthViewModel" />
+            type="org.linus.lms.auth.presentation.viewmodel.AuthViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.platform.AuthEmailFragment">
+        tools:context=".presentation.ui.AuthEmailFragment">
 
         <TextView
             android:id="@+id/textview_first"

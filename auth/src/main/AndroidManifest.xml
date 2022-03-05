@@ -3,7 +3,7 @@
     package="org.linus.lms.auth">
 
     <application>
-        <activity android:name=".ui.platform.AuthActivity"
+        <activity android:name=".presentation.ui.AuthActivity"
             android:exported="false"
             android:launchMode="singleTop"
             android:theme="@style/Theme.MaterialComponents.NoActionBar"
