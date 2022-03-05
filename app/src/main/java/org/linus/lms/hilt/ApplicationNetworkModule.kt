@@ -33,7 +33,7 @@ class ApplicationNetworkModule {
     companion object {
         private const val DISK_CACHE_SIZE =  50 * 1024 * 1024L
         private const val OKHTTP_TIMEOUT = 60_000L
-        private const val LMS_BASE_URL = "https://letmesee.app"
+        private const val LMS_BASE_URL = "https://lms.viacube.com"
         private const val TMDB_BASE_URL = "url_for_tmdb"
     }
 

@@ -2,7 +2,6 @@ package org.linus.lms.auth.ui.platform
 
 import android.os.Bundle
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import org.linus.base.domain.exception.AppException
 import org.linus.base.platform.ui.fragment.BaseFragment
@@ -24,13 +23,9 @@ class AuthEmailFragment: BaseFragment<FragmentEmailBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel.apply {
-            observe(onContinueEvent) {
-                toaster.showToast("test hilt")
-                navController.navigate(AuthEmailFragmentDirections.toPasswordFragment())
-            }
-            observe(onConfirmAccountEvent) {
-                toaster.showToast("$it need confirm to continue")
-            }
+            observe(openVerifyCodeScreenEvent) { openVerifyCodeScreen() }
+            observe(confirmAccountEvent, ::onAccountNeedVerify)
+            observe(accountVerifyFailedEvent, ::onAccountVerifyFailed)
             observe(error) {
                 if (it is AppException.EmailNotRegisteredException) {
                     toaster.showToast("Ready to register")
@@ -47,5 +42,15 @@ class AuthEmailFragment: BaseFragment<FragmentEmailBinding>() {
         binding.viewmodel = viewModel
     }
 
+    private fun openVerifyCodeScreen() {
+        navController.navigate(AuthEmailFragmentDirections.toPasswordFragment())
+    }
 
+    private fun onAccountNeedVerify(email: String) {
+        toaster.showToast("$email need confirm to continue")
+    }
+
+    private fun onAccountVerifyFailed(reason: String) {
+        toaster.showToast(reason)
+    }
 }

@@ -14,7 +14,7 @@ abstract class BaseViewModel: ViewModel() {
     private val _error = MutableLiveData<Throwable>()
     val error = _error as LiveData<Throwable>
 
-    protected fun sendError(error: Throwable) {
+    protected open fun sendError(error: Throwable) {
         _error.postValue(error)
     }
 

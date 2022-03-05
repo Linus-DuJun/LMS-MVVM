@@ -8,5 +8,6 @@ sealed class AppException(
     object NetworkNotConnectedException : AppException(message = "Network not connected")
     object UnknownException : AppException(message = "Unknown error")
     class EmailNotRegisteredException(email: String) : AppException(message = null)
+    class AccountVerifyFailedException(message: String?) : AppException(message = message)
     class ServerException(message: String?): AppException(message = message)
 }
