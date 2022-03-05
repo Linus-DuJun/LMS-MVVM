@@ -16,7 +16,7 @@ class AuthViewModel @Inject constructor(
     private val signupUseCase: SignupUseCase
 ) : BaseViewModel() {
 
-    val email = MutableLiveData("test886@mailinator.com")
+    val email = MutableLiveData("testacc668@mailinator.com")
     val openVerifyCodeScreenEvent = SingleLiveEvent<Unit>()
     val userLoggedInEvent = SingleLiveEvent<Unit>()
     val confirmAccountEvent = SingleLiveEvent<String>()
@@ -26,9 +26,7 @@ class AuthViewModel @Inject constructor(
         viewModelScope.safeLaunch {
             val params = GetVerifyCodeUseCase.GetVerifyCodeParam(email = email.value!!)
             getVerifyCodeUseCase(params = params) {
-                it.onSuccess {
-                    openVerifyCodeScreenEvent.postValue(Unit)
-                }
+                openVerifyCodeScreenEvent.call()
             }
         }
     }
@@ -37,9 +35,7 @@ class AuthViewModel @Inject constructor(
         viewModelScope.safeLaunch {
             val params = SignupUseCase.SignupParams(email = email.value!!, "")
             signupUseCase(params = params) {
-                it.onSuccess {
-                    confirmAccountEvent.postValue(email.value!!)
-                }
+                confirmAccountEvent.postValue(email.value!!)
             }
         }
     }

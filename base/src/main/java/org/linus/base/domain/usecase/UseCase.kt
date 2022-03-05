@@ -15,12 +15,15 @@ abstract class BaseUseCase<out Type, in Params> where Type: Any? {
 
     suspend operator fun invoke(
         params: Params,
-        onResult: (Result<Type>) -> Unit = {}
+        onResult: (Type) -> Unit = {}
     ) {
         try {
-           onResult(Result.success(run(params)))
+            val result = run(params)
+           withContext(Dispatchers.Main) {
+               onResult(result) // callback on main thread
+           }
         } catch (e: Exception) {
-            error(e)
+            throw e // delegate error to CoroutineExceptionHandler.
         }
     }
 

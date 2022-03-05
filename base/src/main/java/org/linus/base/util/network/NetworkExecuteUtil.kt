@@ -9,6 +9,6 @@ suspend fun <T> requestApiWithNetworkChecking(
     return if (networkManager.isConnected) {
         apiCall.invoke()
     } else {
-        error(AppException.NetworkNotConnectedException)
+        throw AppException.NetworkNotConnectedException
     }
 }
