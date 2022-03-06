@@ -23,11 +23,11 @@
             tools:context=".presentation.ui.AuthEmailFragment">
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline025"
+                android:id="@+id/guideline030"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.25" />
+                app:layout_constraintGuide_percent="0.30" />
 
             <TextView
                 android:id="@+id/fragment_login_title_text_view"
@@ -38,7 +38,7 @@
                 android:text="@string/login_title"
                 android:textColor="@color/black"
                 android:textSize="@dimen/fragment_login_title_textSize"
-                app:layout_constraintBottom_toTopOf="@id/guideline025"
+                app:layout_constraintBottom_toTopOf="@id/guideline030"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -51,10 +51,10 @@
                 app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/guideline025">
+                app:layout_constraintTop_toBottomOf="@id/guideline030">
 
               <com.google.android.material.textfield.TextInputEditText
-                  android:id="@+id/email_edit_text"
+                  android:id="@+id/fragment_login_email_edit_text"
                   style="@style/EditText.Form"
                   android:hint="@string/login_hint"
                   android:inputType="textEmailAddress"
@@ -62,6 +62,16 @@
                   app:onEditorEnterAction="@{viewmodel::onContinueClick}"/>
 
             </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/ButtonAccent"
+                android:text="@string/button_continue"
+                android:enabled="@{viewmodel.isEmailValid()}"
+                android:onClick="@{() -> viewmodel.onContinueClick()}"
+                android:layout_marginTop="@dimen/padding_32dp"
+                app:layout_constraintTop_toBottomOf="@id/fragment_login_email_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

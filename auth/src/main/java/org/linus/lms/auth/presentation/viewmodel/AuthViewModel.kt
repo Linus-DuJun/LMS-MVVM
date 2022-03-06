@@ -1,6 +1,8 @@
 package org.linus.lms.auth.presentation.viewmodel
 
+import android.util.Patterns
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import org.linus.base.domain.exception.AppException
@@ -17,6 +19,9 @@ class AuthViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     val email = MutableLiveData<String>()
+    val isEmailValid = Transformations.map(email) {
+        Patterns.EMAIL_ADDRESS.matcher(it).matches()
+    }
     val openVerifyCodeScreenEvent = SingleLiveEvent<Unit>()
     val userLoggedInEvent = SingleLiveEvent<Unit>()
     val confirmAccountEvent = SingleLiveEvent<String>()

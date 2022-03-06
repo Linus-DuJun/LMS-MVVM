@@ -20,4 +20,7 @@
     <color name="grey500">#98A1B3</color>
     <color name="grey600">#7A8599</color>
     <color name="grey800">#475266</color>
+
+    <color name="disabled_button_color">#29747480</color>
+    <color name="disabled_button_text_color">#803C3C43</color>
 </resources>
