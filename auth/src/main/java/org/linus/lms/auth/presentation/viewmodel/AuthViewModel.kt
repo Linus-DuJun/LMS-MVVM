@@ -16,13 +16,14 @@ class AuthViewModel @Inject constructor(
     private val signupUseCase: SignupUseCase
 ) : BaseViewModel() {
 
-    val email = MutableLiveData("testacc668@mailinator.com")
+    val email = MutableLiveData<String>()
     val openVerifyCodeScreenEvent = SingleLiveEvent<Unit>()
     val userLoggedInEvent = SingleLiveEvent<Unit>()
     val confirmAccountEvent = SingleLiveEvent<String>()
     val accountVerifyFailedEvent = SingleLiveEvent<String>()
 
     fun onContinueClick() {
+        // ignore email check, assume email is valid, for demo, this is enough
         viewModelScope.safeLaunch {
             val params = GetVerifyCodeUseCase.GetVerifyCodeParam(email = email.value!!)
             getVerifyCodeUseCase(params = params) {

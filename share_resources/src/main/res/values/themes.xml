@@ -1,0 +1,51 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="LMSMVVMTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/white</item>
+        <item name="colorOnPrimary">@color/colorAccent</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="AppTheme" parent="LMSMVVMTheme" />
+
+    <style name="FilledInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"/>
+
+    <style name="FilledInputLayout.Form">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/padding_16dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/grey600</item>
+        <item name="hintTextColor">@color/grey600</item>
+        <item name="passwordToggleTint">@color/grey600</item>
+        <item name="boxBackgroundColor">@android:color/white</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+        <item name="boxStrokeColor">@color/black_87</item>
+    </style>
+
+    <style name="FilledInputLayout.Form.Clear">
+        <item name="endIconMode">custom</item>
+        <item name="endIconDrawable">@drawable/ic_text_input_clear</item>
+        <item name="android:drawablePadding">0dp</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <style name="EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/black_87</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_orange</item>
+    </style>
+
+    <style name="EditText.Form">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingEnd">4dp</item>
+    </style>
+</resources>
